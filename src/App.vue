@@ -27,4 +27,88 @@ nav {
     }
   }
 }
+
+/*-----------------------*\
+    $Variables
+\*-----------------------*/
+:root {
+  /* Paleta de colores */
+  --color-first: #03a9f4;
+  --color-second: #0277BD;
+  --color-accent: #80d8ff;
+  --color-bg: #E1F5FE;
+  --color-white: #e0e0e0;
+  --color-text: #263238;
+  /* Tipografia */
+  --font-title: 'Koulen', cursive;
+  --font-content: 'Varela Round', sans-serif;
+  --h1-font-size: 1.95rem;
+  --h2-font-size: 1.56rem;
+  --h3-font-size: 1.25rem;
+  --body-font-size: 1rem;
+  --smaller-font-size: .8rem;
+  --small-font-size: .64rem;
+  /* Layout */
+  --header-height: 60px;
+  --max-width: 1200px;
+  --gutter: 1em;
+}
+
+/*-----------------------*\
+  $Base
+\*-----------------------*/
+*,
+*::after,
+*::before { box-sizing: border-box; }
+body {
+    font-size: var(--body-font-size);
+    font-family: var(--font-content);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    font-family: var(--font-title);
+    text-transform: uppercase;
+}
+h1 { font-size: var(--h1-font-size); }
+h2 { font-size: var(--h2-font-size); }
+h3 { font-size: var(--h3-font-size); }
+
+/*-----------------------*\
+  $Layout
+\*-----------------------*/
+.l-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: var(--max-width);
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.l-section {
+  margin-bottom: 6rem;
+}
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-content { text-align: center; }
 </style>
