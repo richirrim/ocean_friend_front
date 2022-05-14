@@ -1,6 +1,6 @@
 <h1 align="center">OCEAN FRIEND FRONT</h1>
 
-**OceanFriend Frot** es la UI que consumira los servicios de la API [OceanFriend Frot](https://github.com/GabrielaEsquivel/ocean_friend_api)
+**OceanFriend Frot** es la UI que consumira los servicios de la API [OceanFriend API](https://github.com/GabrielaEsquivel/ocean_friend_api)
 
 ## Caracteristicas
 
