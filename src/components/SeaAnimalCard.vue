@@ -30,10 +30,9 @@
         "
       ></i>
       <div class="card-animal__dropdown-list" :class="toggleDropdown">
-        estp
         <div class="card">
           <div class="card card-animal__map">
-            dsads
+            <GoogleMaping/>
           </div>
         </div>
         <div class="card">
@@ -125,7 +124,7 @@ export default {
     color: var(--color-first);
   }
   &__dropdown-list {
-    position: absolute;
+    position: fixed;
     top: 9em;
     right: 0;
     left: 0;
