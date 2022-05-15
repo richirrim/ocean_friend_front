@@ -1,6 +1,6 @@
 <template>
 <div class="maps">
-    <GoogleMap api-key="AIzaSyCWrEX8F6my1xYIFzbG2i2b_CkmHro6g8U"  :center="center" :zoom="15" class="maps">
+    <GoogleMap api-key="apiKey"  :center="center" :zoom="15" class="maps">
     <Marker :options="{ position: center }" />
   </GoogleMap>
 </div>
@@ -19,6 +19,9 @@ import { GoogleMap, Marker } from 'vue3-google-map'
 export default defineComponent({
   name: 'GoogleMaping',
   components: { GoogleMap, Marker },
+  data: {
+    apiKey= process.env.API_KEY_MAPS
+  }
   setup () {
     const center = { lat: 16.84942, lng: -99.90891 }
 
