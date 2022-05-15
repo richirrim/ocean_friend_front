@@ -1,30 +1,39 @@
 <template>
   <div>
-    <header class="main-header  l-section">
-      <div class="wrapper  l-container">
+    <header class="main-header l-section">
+      <div class="wrapper l-container">
         <h1 class="main-header__title">Dashboard</h1>
         <div class="user-logout">
-          <div class="button  user-logout__button">
-            <img class="user-logout__image" :src="require(`@/assets/images/user-image.jpg`)" alt="Imagen de usaurio logueado.">
+          <div class="button user-logout__button">
+            <img
+              class="user-logout__image"
+              :src="require(`@/assets/images/user-image.jpg`)"
+              alt="Imagen de usaurio logueado."
+            />
             <i class="icon-arrow"></i>
           </div>
-          <div class="card  menu-toggle">
+          <div class="card menu-toggle">
             <div class="menu-toggle__profile">
-              <img class="menu-toggle__image" :src="require(`@/assets/images/user-image.jpg`)" alt="Imagen de usaurio logueado.">
+              <img
+                class="menu-toggle__image"
+                :src="require(`@/assets/images/user-image.jpg`)"
+                alt="Imagen de usaurio logueado."
+              />
               <span class="menu-toggle__name">Woopa master</span>
             </div>
-            <button class="menu-toggle__button  button">Cerrar Sesión</button>
+            <button class="menu-toggle__button button">Cerrar Sesión</button>
           </div>
         </div>
-
       </div>
     </header>
-    <main class="main  l-section">
-      <div class="main__container  l-container">
+    <main class="main l-section">
+      <div class="main__container l-container">
         <h2 class="title">Animales marinos en peligro</h2>
-        <SeaAnimalCard v-for="animal in seaAnimals"
+        <SeaAnimalCard
+          v-for="animal in seaAnimals"
           :key="animal"
-          :animalInfo="animal"/>
+          :animalInfo="animal"
+        />
       </div>
     </main>
   </div>
@@ -32,6 +41,7 @@
 
 <script>
 import SeaAnimalCard from '@/components/SeaAnimalCard.vue'
+import axios from 'axios'
 
 export default {
   name: 'DashboardView',
@@ -61,6 +71,18 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    axios
+      .get('http://localhost:3052/alarms/')
+      .then((response) => {
+        console.log('data', response.data)
+        this.seaAnimals = response.data
+      })
+      .catch((error) => {
+        this.errored = true
+      })
+      .finally(() => (this.loading = false))
   }
 }
 </script>
@@ -68,9 +90,9 @@ export default {
 <style scopde lang="scss">
 .main-header {
   & > .wrapper {
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
   }
   &__title {
     color: var(--color-first);
@@ -79,7 +101,7 @@ export default {
 
 .user-logout {
   &__button {
-    padding: .3em 1em;
+    padding: 0.3em 1em;
     width: 100%;
     margin-bottom: var(--gutter);
   }
@@ -106,13 +128,13 @@ export default {
   &__image {
     --width: 32px;
     border-radius: 50%;
-    margin-right: .5em;
+    margin-right: 0.5em;
     width: var(--width);
     height: var(--width);
   }
   &__button {
     background-color: var(--color-accent);
-    padding: .8em .5em;
+    padding: 0.8em 0.5em;
     display: block;
   }
   &__profile {
@@ -122,7 +144,7 @@ export default {
   }
 }
 
-[class*=icon-arrow]::before {
+[class*="icon-arrow"]::before {
   --width: 1.5em;
   content: "";
   margin-right: 0;
