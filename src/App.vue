@@ -172,4 +172,41 @@ h3 { font-size: var(--h3-font-size); }
 //   background-repeat: no-repeat;
 //   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
 // }
+
+/*-----------------------*\
+    $Button
+\*-----------------------*/
+.button {
+  border: none;
+  border-radius: 32em;
+  padding: .6em 1.8em .6em;
+  color: var(--color-text);
+  background-color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all .3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 6px;
+
+  &:active {
+      transform: scale(.96);
+  }
+  &:hover {
+      background-color: var(--color-white);
+  }
+}
+
+/*-----------------------*\
+    $Card
+\*-----------------------*/
+.card {
+  border-radius: 1em;
+  padding: 1em 2em;
+  margin-bottom: 1em;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 6px;
+}
+
 </style>
