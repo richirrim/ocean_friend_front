@@ -7,13 +7,13 @@
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
@@ -43,7 +43,7 @@ nav {
   --color-white: #e0e0e0;
   --color-text: #263238;
   /* Tipografia */
-  --font-title: 'Koulen', cursive;
+  --font-title: 'Righteous', cursive;
   --font-content: 'Varela Round', sans-serif;
   --h1-font-size: 1.95rem;
   --h2-font-size: 1.56rem;
