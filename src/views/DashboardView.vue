@@ -19,20 +19,62 @@
 
       </div>
     </header>
+    <main class="main  l-section">
+      <div class="main__container  l-container">
+        <h2 class="title">Animales marinos en peligro</h2>
+        <SeaAnimalCard v-for="animal in seaAnimals"
+          :key="animal"
+          :animalInfo="animal"/>
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
+import SeaAnimalCard from '@/components/SeaAnimalCard.vue'
+
 export default {
-  name: 'DashboardView'
+  name: 'DashboardView',
+  components: {
+    SeaAnimalCard
+  },
+  data () {
+    return {
+      seaAnimals: [
+        {
+          name: 'Tortuga',
+          location: 'sdasd adsdasd asda',
+          description: 'Tortuga a la orilla del mar, patita atorada.',
+          attended: true
+        },
+        {
+          name: 'Tortuga2',
+          location: 'sdasd adsdasd asda',
+          description: 'Tortuga a la orilla del mar, patita atorada.',
+          attended: false
+        },
+        {
+          name: 'Tortuga3',
+          location: 'sdasd adsdasd asda',
+          description: 'Tortuga a la orilla del mar, patita atorada.',
+          attended: false
+        }
+      ]
+    }
+  }
 }
 </script>
 
 <style scopde lang="scss">
-.main-header > .wrapper {
+.main-header {
+  & > .wrapper {
   position: relative;
   justify-content: space-between;
   align-items: center;
+  }
+  &__title {
+    color: var(--color-first);
+  }
 }
 
 .user-logout {
@@ -80,11 +122,20 @@ export default {
   }
 }
 
-[class*=icon-]::before {
+[class*=icon-arrow]::before {
   --width: 1.5em;
   content: "";
   margin-right: 0;
   padding: 0;
   transform: rotate(180deg);
+}
+
+.main {
+  .title {
+    text-align: left;
+  }
+  &__container {
+    flex-direction: column;
+  }
 }
 </style>
