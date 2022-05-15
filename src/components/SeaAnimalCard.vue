@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="row">
     <div class="card  card-animal">
       <figure class="card  card-animal__container">
         <img class="card-animal__image" :src="require(`@/assets/images/tortuga-image.jpg`)" alt="">
@@ -8,7 +8,7 @@
         <span class="card-animal__name">{{ animalInfo.name }}</span>
         <span class="card-animal__location  icon-location">{{ animalInfo.location }}</span>
         <span class="card-animal__description  icon-description">Descripción: <span contenteditable="true">{{ animalInfo.description }}</span></span>
-        <span class="card-animal__status" :class="statusClass">Estado: <span>{{ status(animalInfo.attended) }}</span></span>
+        <span class="card-animal__status" :class="statusClass">Estado: <span>{{ status(animalInfo.isAttended) }}</span></span>
       </div>
       <i class="icon-arrow" @click="isToggleShow ? this.isToggleShow = false : this.isToggleShow = true"></i>
       <div class="card-animal__dropdown-list" :class="toggleDropdown">
