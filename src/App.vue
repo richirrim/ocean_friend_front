@@ -64,20 +64,20 @@ nav {
 *::after,
 *::before { box-sizing: border-box; }
 body {
-    font-size: var(--body-font-size);
-    font-family: var(--font-content);
-    color: var(--color-text);
-    background-color: var(--color-bg);
+  font-size: var(--body-font-size);
+  font-family: var(--font-content);
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 a {
-    color: var(--color-accent);
-    text-decoration: none;
+  color: var(--color-accent);
+  text-decoration: none;
 }
 h1,
 h2,
@@ -85,9 +85,9 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top: 0;
-    font-family: var(--font-title);
-    text-transform: uppercase;
+  margin-top: 0;
+  font-family: var(--font-title);
+  text-transform: uppercase;
 }
 h1 { font-size: var(--h1-font-size); }
 h2 { font-size: var(--h2-font-size); }
@@ -114,4 +114,62 @@ h3 { font-size: var(--h3-font-size); }
   margin-right: auto;
 }
 .center-content { text-align: center; }
+
+/*-----------------------*\
+  $icons
+\*-----------------------*/
+// [class*=icon-]::before {
+//   --width: 1.5em;
+//   content: "";
+//   display: inline-block;
+//   margin-right: .4em;
+//   width: var(--width);
+//   height: var(--width);
+//   &:hover::before,
+//   &:focus::before {
+//     filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+//   }
+// }
+// .icon-arrow::before {
+//   content: "";
+//   background-image: url("./assets/icons/icon-arrow.svg");
+//   background-repeat: no-repeat;
+//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+// }
+// .icon-description::before {
+//   content: "";
+//   background-image: url("./assets/icons/icon-description.svg");
+//   background-repeat: no-repeat;
+//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+// }
+// .icon-done::before {
+//   content: "";
+//   background-image: url("./assets/icons/icon-done.svg");
+//   background-repeat: no-repeat;
+//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+// }
+// .icon-slope::before {
+//   content: "";
+//   background-image: url("./assets/icons/icon-slope.svg");
+//   background-repeat: no-repeat;
+//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+// }
+// .icon-location::before {
+//   content: "";
+//   background-image: url("./assets/icons/icon-location.svg");
+//   background-repeat: no-repeat;
+//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+// }
+// .icon-notication::before {
+//   content: "";
+//   background-image: url("./assets/icons/icon-notification.svg");
+//   background-repeat: no-repeat;
+//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+// }
+// .icon-example::before {
+//     content: "";
+//     background-image: url("./assets/icons/icon-example.svg");
+//     background-repeat: no-repeat;
+//     filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+// }
 </style>
