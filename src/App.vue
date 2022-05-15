@@ -118,58 +118,58 @@ h3 { font-size: var(--h3-font-size); }
 /*-----------------------*\
   $icons
 \*-----------------------*/
-// [class*=icon-]::before {
-//   --width: 1.5em;
-//   content: "";
-//   display: inline-block;
-//   margin-right: .4em;
-//   width: var(--width);
-//   height: var(--width);
-//   &:hover::before,
-//   &:focus::before {
-//     filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
-//   }
-// }
-// .icon-arrow::before {
-//   content: "";
-//   background-image: url("./assets/icons/icon-arrow.svg");
-//   background-repeat: no-repeat;
-//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
-// }
-// .icon-description::before {
-//   content: "";
-//   background-image: url("./assets/icons/icon-description.svg");
-//   background-repeat: no-repeat;
-//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
-// }
-// .icon-done::before {
-//   content: "";
-//   background-image: url("./assets/icons/icon-done.svg");
-//   background-repeat: no-repeat;
-//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
-// }
-// .icon-slope::before {
-//   content: "";
-//   background-image: url("./assets/icons/icon-slope.svg");
-//   background-repeat: no-repeat;
-//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
-// }
-// .icon-location::before {
-//   content: "";
-//   background-image: url("./assets/icons/icon-location.svg");
-//   background-repeat: no-repeat;
-//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
-// }
-// .icon-notication::before {
-//   content: "";
-//   background-image: url("./assets/icons/icon-notification.svg");
-//   background-repeat: no-repeat;
-//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
-// }
+[class*=icon-]::before {
+  --width: 1.5em;
+  content: "";
+  display: inline-block;
+  margin-right: .4em;
+  width: var(--width);
+  height: var(--width);
+  &:hover::before,
+  &:focus::before {
+    filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+  }
+}
+.icon-arrow::before {
+  content: "";
+  background-image: url("./assets/icons/icon-arrow.svg");
+  background-repeat: no-repeat;
+  filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+}
+.icon-description::before {
+  content: "";
+  background-image: url("./assets/icons/icon-description.svg");
+  background-repeat: no-repeat;
+  filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+}
+.icon-done::before {
+  content: "";
+  background-image: url("./assets/icons/icon-done.svg");
+  background-repeat: no-repeat;
+  filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+}
+.icon-slope::before {
+  content: "";
+  background-image: url("./assets/icons/icon-slope.svg");
+  background-repeat: no-repeat;
+  filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+}
+.icon-location::before {
+  content: "";
+  background-image: url("./assets/icons/icon-location.svg");
+  background-repeat: no-repeat;
+  filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+}
+.icon-notification::before {
+  content: "";
+  background-image: url("./assets/icons/icon-notification.svg");
+  background-repeat: no-repeat;
+  filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+}
 // .icon-example::before {
-//     content: "";
-//     background-image: url("./assets/icons/icon-example.svg");
-//     background-repeat: no-repeat;
-//     filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
+//   content: "";
+//   background-image: url("./assets/icons/icon-example.svg");
+//   background-repeat: no-repeat;
+//   filter: invert(16%) sepia(17%) saturate(743%) hue-rotate(155deg) brightness(92%) contrast(89%);
 // }
 </style>
