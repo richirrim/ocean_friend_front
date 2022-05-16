@@ -40,6 +40,7 @@
 </template>
 
 <script>
+
 import SeaAnimalCard from '@/components/SeaAnimalCard.vue'
 import axios from 'axios'
 
@@ -73,6 +74,7 @@ export default {
     }
   },
   mounted () {
+    /* eslint handle-callback-err: "warn" */
     axios
       .get('http://localhost:3052/alarms/')
       .then((response) => {
@@ -82,6 +84,7 @@ export default {
       /* eslint-disable */
       .catch((error) => {
         this.errored = true
+        console.log(error)
       })
       .finally(() => (this.loading = false))
   }

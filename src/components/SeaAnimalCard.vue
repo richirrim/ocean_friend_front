@@ -1,55 +1,84 @@
 <template>
   <div class="row">
-    <div class="card  card-animal">
-      <figure class="card  card-animal__container">
-        <img class="card-animal__image" :src="require(`@/assets/images/tortuga-image.jpg`)" alt="">
+    <div class="card card-animal">
+      <figure class="card card-animal__container">
+        <img
+          class="card-animal__image"
+          :src="require(`@/assets/images/tortuga-image.jpg`)"
+          alt=""
+        />
       </figure>
       <div class="card-animal__content">
         <span class="card-animal__name">{{ animalInfo.name }}</span>
-        <span class="card-animal__location  icon-location">{{ animalInfo.location }}</span>
-        <span class="card-animal__description  icon-description">Descripción: <span contenteditable="true">{{ animalInfo.description }}</span></span>
-        <span class="card-animal__status" :class="statusClass">Estado: <span>{{ status(animalInfo.isAttended) }}</span></span>
+        <span class="card-animal__location icon-location">{{
+          animalInfo.location
+        }}</span>
+        <span class="card-animal__description icon-description"
+          >Descripción:
+          <span contenteditable="true">{{ animalInfo.description }}</span></span
+        >
+        <span class="card-animal__status" :class="statusClass"
+          >Estado: <span>{{ status(animalInfo.isAttended) }}</span></span
+        >
       </div>
-      <i class="icon-arrow" @click="isToggleShow ? this.isToggleShow = false : this.isToggleShow = true"></i>
+      <i
+        class="icon-arrow"
+        @click="
+          isToggleShow
+            ? (this.isToggleShow = false)
+            : (this.isToggleShow = true)
+        "
+      ></i>
       <div class="card-animal__dropdown-list" :class="toggleDropdown">
-          <div class="card">
-            <div class="card  card-animal__map"></div>
+        <div class="card">
+          <div class="card card-animal__map">
+            <GoogleMaping/>
           </div>
-          <div class="card">
-            <img class="card  card-animal__image-big" :src="require(`@/assets/images/tortuga-image.jpg`)" alt="">
-          </div>
+        </div>
+        <div class="card">
+          <img
+            class="card card-animal__image-big"
+            :src="require(`@/assets/images/tortuga-image.jpg`)"
+            alt=""
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
+import GoogleMaping from "./GoogleMapC.vue";
+
 export default {
-  name: 'SeaAnimalCard',
-  props: [
-    'animalInfo'
-  ],
-  data () {
+  name: "SeaAnimalCard",
+  components: {
+    GoogleMaping,
+  },
+  props: ["animalInfo"],
+  data() {
     return {
       isToggleShow: false,
-      animalStatus: Boolean
-    }
+      animalStatus: Boolean,
+    };
   },
   computed: {
-    toggleDropdown () {
-      return this.isToggleShow ? 'show-dropdown-list' : 'hidden-dropdown-list'
+    toggleDropdown() {
+      console.log("AQUI", this.isToggleShow)
+      return this.isToggleShow ? "show-dropdown-list" : "hidden-dropdown-list";
     },
-    statusClass () {
-      return this.animalStatus ? 'icon-done' : 'icon-slope'
-    }
+    statusClass() {
+      return this.animalStatus ? "icon-done" : "icon-slope";
+    },
   },
   methods: {
-    status (animalStatus) {
-      this.animalStatus = this.animalInfo.attended
-      return animalStatus ? 'Rescatado' : 'Pendiente'
-    }
-  }
-}
+    status(animalStatus) {
+      this.animalStatus = this.animalInfo.attended;
+      return animalStatus ? "Rescatado" : "Pendiente";
+    },
+  },
+};
 </script>
 
 <style scopde lang="scss">
@@ -63,9 +92,9 @@ export default {
 
   .icon-arrow {
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
     &:active {
-      transform: scale(.70);
+      transform: scale(0.7);
     }
   }
 
@@ -95,13 +124,13 @@ export default {
     color: var(--color-first);
   }
   &__dropdown-list {
-    position: absolute;
+    position: fixed;
     top: 9em;
     right: 0;
     left: 0;
     display: flex;
     z-index: 100;
-    transition: all .3s;
+    transition: all 0.3s;
     & > div:first-child {
       margin-right: var(--gutter);
       flex-basis: 70%;
@@ -129,7 +158,7 @@ export default {
     display: flex;
   }
   .hidden-dropdown-list {
-   display: none;
+    display: none;
   }
 }
 </style>
