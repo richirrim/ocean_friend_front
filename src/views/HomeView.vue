@@ -3,110 +3,126 @@
   <div class="home">
     <header class="main-header  l-section">
       <div class="wrapper  l-container">
-        <img class="logo" :src="require(`@/assets/images/oseanfriend.png`)">
-        <nav class="header__nav">
-          <ul class="header__menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">¿Cómo funciona nuestro sistema?</a></li>
+        <img class="main-logo" :src="require(`@/assets/images/oseanfriend.png`)">
+        <nav class="main-nav">
+          <ul class="menu">
+            <router-link class="menu__link" to="/">Home</router-link>
+            <router-link class="menu__link" to="/dashboard">Dashboard</router-link>
+            <router-link class="menu__link" to="#aboutUs" @click.prevent="scrollInto('aboutUs')">Nosotros</router-link>
+            <router-link class="menu__link" to="#aboutSystem" @click.prevent="scrollInto('aboutSystem')">Sobre el sistema</router-link>
           </ul>
         </nav>
       </div>
     </header>
-    <article>
-      <!--Priemra parte-->
-      <section class="banner">
-        <h1>Osean Friend</h1>
+    <!--Banner -->
+    <div class="main-banner  l-section">
+      <img class="main-banner__hero-image" :src="require(`@/assets/images/banner-image.jpg`)" alt="Imagen del banner">
+      <div class="main-banner__content">
+        <h1 class="main-banner__title">Ocean Friend</h1>
         <h2>Organización para la preservación de las especies marinas </h2>
         <p>Hacer el cambio está al alcance de tus manos</p>
+      </div>
+    </div>
+    <main class="main  l-section">
+      <!-- Nosotros -->
+      <section id="#aboutUs" class="about  l-section  center-content">
+        <div class="about__container  l-container">
+          <h2 class="about__title">About us</h2>
+          <p class="about__text">
+            Somos un grupo de biólogos que nos unimos con la comunidad para hacer el cambio hoy.
+            Gracias a los reportes de la comunidad y a las alertas en tiempo real de nuestro Osean
+            Friend estamos salvando vidas marinas todos los días.
+          </p>
+          <p class="about__text  icon-notification">A una notificación de hacer el cambio. </p>
+        </div>
       </section>
-      <!--About Us-->
-      <section>
-        <h2>About us</h2>
-        <p>Somos un grupo de biólogos que nos unimos con la comunidad para hacer el cambio hoy.</p>
-        <p>Gracias a los reportes de la comunidad y a las alertas en tiempo real de nuestro Osean Friend estamos
-          salvando vidas marinas todos los días.</p>
-        <p>A una notificación de hacer el cambio </p>
-      </section>
-      <!--Como funcionamos-->
-      <section>
-        <h2>¿Cómo funciona nuestro sistema?</h2>
-        <div class="contairner">
-          <div class="card">
-            <figure><img :src="require(`@/assets/images/robot.jpg`)"></figure>
-            <div class="card__contenido">
-              <h3>Conoce a nuestro Osean Friend </h3>
-              <p>Osean Friend es un robot que navega por el mar buscando espacies que se encuentran en alguna situación
-                de
-                peligro. </p>
+      <!---- Acerca del sistema -->
+      <section id="#aboutSystem" class="about-system  l-section">
+        <h2 class="about-system__title">¿Cómo funciona nuestro sistema?</h2>
+        <div class="about-system__wrapper  l-container">
+          <article class="card-info">
+            <figure class="card  card-info__container-image">
+              <img class="card-info__image" :src="require(`@/assets/images/robot.jpg`)">
+            </figure>
+            <div class="card-info__content">
+              <h3 class="card-info__subtitle">Conoce a nuestro Osean Friend </h3>
+              <p class="card-info__description">
+                Osean Friend es un robot que navega por el mar buscando espacies que
+                se encuentran en alguna situación de peligro.
+              </p>
             </div>
-            <br>
-            <div>
-              <figure><img :src="require(`@/assets/images/biologos.jpg`)"></figure>
-              <div class="card__contenido">
-                <h3>Equipo de biólogos </h3>
-                <p>Cuando Osean Friend encuentra un espécimen en situación de peligro un grupo especializado de biólogos
-                  recibe
-                  la alerta y así el equipo evalúa la situación para poder accionar de la manera más efectiva para
-                  salvar
-                  la
-                  vida del animal.</p>
-              </div>
+          </article>
+          <article class="card-info">
+            <figure class="card  card-info__container-image">
+              <img class="card-info__image" :src="require(`@/assets/images/biologos.jpg`)">
+            </figure>
+            <div class="card-info__content">
+              <h3 class="card-info__subtitle">Equipo de biólogos  </h3>
+              <p class="card-info__description">
+                Cuando Osean Friend encuentra un espécimen en situación de peligro
+                un grupo especializado de biólogos recibe la alerta y así el equipo
+                evalúa la situación para poder accionar de la manera más efectiva para
+                salvar la vida del animal.
+              </p>
             </div>
-            <h3>Tú </h3>
-            <p>Tú como contribuyente nos puedes ayudar de dos formas:</p>
-            <div>
-              <figure><img :src="require(`@/assets/images/tortuga_bolsa.jpg`)"></figure>
-              <div class="card__contenido">
-                <h3>Haz un reporte</h3>
-                <p>Si encuentras un animal marino en situación de peligro podrás ayudar haciendo un reporte describiendo
-                  la
-                  situación en la que se encuentra dicho espécimen, adjuntando una imagen lo mas clara posible y la
-                  ubicación de
-                  donde se encuentra.</p>
-              </div>
+          </article>
+          <article class="card-info">
+            <figure class="card  card-info__container-image">
+              <img class="card-info__image" :src="require(`@/assets/images/tortuga_bolsa.jpg`)">
+            </figure>
+            <div class="card-info__content">
+              <h3 class="card-info__subtitle">Tú</h3>
+              <p class="card-info__description">
+                Tú como contribuyente nos puedes ayudar de dos formas:
+              </p>
+              <p>
+                Si encuentras un animal marino en situación de peligro podrás ayudar haciendo
+                un reporte describiendo la situación en la que se encuentra dicho espécimen,
+                adjuntando una imagen lo mas clara posible y la ubicación de donde se encuentra.
+              </p>
             </div>
-            <div>
-              <figure><img :src="require(`@/assets/images/tortugas_contenido2.jpg`)"></figure>
-              <div class="card__contenido">
-                <h3>Ensúciate las manos</h3>
-                <p>Si eastas subscrito a nuestro sitio y estás cerca de un lugar donde
-                  haya un reporte, nosotros te mandamos la alerta a ti con instrucciones de que hacer, no te preocupes
-                  nosotros
-                  anticipadamente evaluamos si una persona común puede hacer la tarea.</p>
-              </div>
+          </article>
+          <article class="card-info">
+            <figure class="card  card-info__container-image">
+              <img class="card-info__image" :src="require(`@/assets/images/tortugas_contenido2.jpg`)">
+            </figure>
+            <div class="card-info__content">
+              <h3 class="card-info__subtitle">Ensúciate las manos</h3>
+              <p class="card-info__description">
+                Si eastas subscrito a nuestro sitio y estás cerca de un lugar donde
+                haya un reporte, nosotros te mandamos la alerta a ti con instrucciones
+                de que hacer, no te preocupes nosotros anticipadamente evaluamos si una
+                persona común puede hacer la tarea.
+              </p>
             </div>
-          </div>
+          </article>
         </div>
       </section>
       <!--Formulario para alerta-->
-      <section>
-        <h2>¿Quiere hacer un reporte?</h2>
-        <p>Agradecemos tus ganas de contribuir y ayudar a hacer el cambio. Confiamos en ti la veracidad de tu
-          información compartida</p>
-        <p>Recuerda leer aquí como funciona nuestro sistema para hacer tu reporte correctamente</p>
-        <form action="/signup" method="post">
-          <p>
-            <label>Title</label><br>
+      <section class="form-alert  l-section  l-container">
+        <h2 class="form-alert__title">¿Quiere hacer un reporte?</h2>
+        <div class="form-alert__content">
+          <p class="form-alert__description">
+            Agradecemos tus ganas de contribuir y ayudar a hacer el cambio. Confiamos
+            en ti la veracidad de tu información compartida
           </p>
-          <p>
-            <label>Nombre de la especie del animan el peligro</label><br>
-            <input type="text" name="name" placeholder="Tortuga">
+          <p class="form-alert__description">
+            Recuerda leer aquí como funciona nuestro sistema para hacer tu reporte
+            correctamente
           </p>
-          <p>
-            <label>Describe la situación </label><br>
-            <textarea description="description"
-              placeholder="La tortuga tiene una bolsa de basura alredor de su cuello y no se puede mover con facilidad"></textarea>
-          </p>
-          <p>
-            <button class="button">Subir una foto</button>
-            <button class="button">Agregar ubicación</button>
-          </p>
-        </form>
-        <p>juntos hacemos en cambio</p>
+          <form class="form  form-card  card" method="post">
+            <input v-model="name" class="form-card__input" type="text" name="name"
+              placeholder="Nombre de la especie del animal: Tortuga" required/>
+            <textarea v-model="description" class="form-card__input-textarea" description="description" placeholder="Describe la situación: La tortuga tiene una bolsa de basura al redor de su cuello y no se puede mover con facilidad" required></textarea>
+            <input v-model="location" class="form-card__input" type="text" placeholder="Compartir mi ubicación" required/>
+            <!-- -->
+            <input class="form-card__input-image" accept="image/*" type="file" multiple>
+            <input class="form-card__input-submit  button" type="submit" value="Enviar alerta" @click.prevent="createAlert">
+            <span>Juntos hacemos un cambio by 💙 Ocean Friend .</span>
+          </form>
+        </div>
       </section>
-    </article>
+    </main>
     <!--footer-->
     <footer>
       <p>Osean Friend 2022</p>
@@ -115,59 +131,214 @@
 </template>
 
 <script>
-// @ is an alias to /src
 export default {
-  name: 'HomeView'
+  name: 'HomeView',
+  data () {
+    return {
+      name: '',
+      description: '',
+      photo: 'tortugita.png',
+      location: ''
+    }
+  },
+  methods: {
+    scrollInto (id) {
+      const section = document.querySelector(`#${id}`)
+      console.log(section)
+      section.scrollIntoView({ behavior: 'smooth' })
+    },
+    createAlert () {
+      const newAlert = {
+        description: this.description,
+        photo: this.photo,
+        location: this.location
+      }
+      const requestOptions = {
+        method: 'POST',
+        body: newAlert,
+        redirect: 'follow'
+      }
+      fetch('http://localhost:3052/alarms/create', requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error))
+      this.description = ''
+      this.photo = ''
+      this.location = ''
+      this.name = ''
+    }
+  }
 }
 </script>
 
-<style scopde lang="scss">
-header {
-  padding: 0px 10vw;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
+<style scoped lang="scss">
+.main-header {
   position: fixed;
   top: 0;
+  background-color: var(--color-first);
+  height: var(--header-height);
   width: 100%;
-  background-color: rgba(206, 224, 224, 0.9);
-  ;
-}
+  opacity: .9;
+  z-index: 100;
 
-.header__nav {
-  width: 67%;
+  .main-logo {
+    width: calc(var(--header-height) / 2);
+    height: calc(var(--header-height) / 2);
+  }
+  .main-nav {
+    padding: 0;
+  }
+  .wrapper {
+    justify-content: space-between;
+    align-items: center;
+  }
 }
+.main-banner {
+  position: relative;
+  border-radius: .5rem;
+  padding: calc(var(--header-height) * 4) 1em calc(var(--header-height) * 4);
+  color: #fff;
+  background-color: var(--color-second);
+  overflow: hidden;
 
-.header__menu {
-  display: flex;
+  &__content {
+    position: relative;
+  }
+  &__hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(.25rem);
+  }
+  &__title {
+    font-size: calc(var(--h1-font-size) * 3);
+    margin-bottom: .2em;
+  }
+}
+.menu {
   margin: 0;
   padding: 0;
   list-style: none;
-  justify-content: space-evenly;
-}
-
-.logo {
-  width: 100px;
-}
-.contairner{
-  width: 100%;
   display: flex;
-  max-width: 500px;
+  justify-content: space-evenly;
+
+  &__link {
+    color: #fff;
+    transition: all .3s;
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+  &__link:not(:last-child) {
+    margin-right: var(--gutter);
+  }
 }
 
-.card {
-  width: 100%;
-  margin: 20px;
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-  flex-direction: row;
+.about {
+  &__title {
+    color: var(--color-first);
+  }
+  &__container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__text {
+    width: 60%;
+  }
+  &__text:last-child {
+    font-weight: bold;
+  }
 }
-.card figure {
-  width: 400px;
+
+.about-system {
+  &__title {
+    color: var(--color-first);
+  }
+}
+
+.card-info {
+  margin-bottom: var(--gutter);
+  display: flex;
+  justify-content: space-between;
+
+  &__container-image {
+    --width: 14rem;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-first);
+    width: calc(var(--width) * 2);
+    height: var(--width);
+    overflow: hidden;
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__content {
+    text-align: left;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &__subtitle {
+    width: 100%;
+  }
+  &__description {
+    margin: 0;
+  }
+}
+
+.form-alert {
+  justify-content: center;
+  &__title {
+    color: var(--color-first);
+  }
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  & > * {
+    border-radius: .5rem;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  &__input,
+  &__input-textarea {
+    border: none;
+    color: var(--color-second);
+    background-color: var(--color-bg);
+    &::placeholder {
+      color: var(--color-accent);
+    }
+    &:focus {
+      outline: 2px solid var(--color-accent);
+    }
+  }
+  &__input-textarea {
+    resize: none;
+    width: 100%;
+    height: 8rem;
+  }
+
+  &__input-submit {
+    background-color: var(--color-accent);
+    justify-content: center;
+  }
 }
 
 footer {
