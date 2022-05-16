@@ -78,7 +78,6 @@ export default {
     axios
       .get('http://localhost:3052/alarms/')
       .then((response) => {
-        console.log('data', response.data)
         this.seaAnimals = response.data
       })
       /* eslint-disable */
