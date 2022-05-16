@@ -4,7 +4,7 @@
       <figure class="card card-animal__container">
         <img
           class="card-animal__image"
-          :src="require(`@/assets/images/tortuga-image.jpg`)"
+          :src="require(`@/assets/images/Tortuga-enpeligro.webp`)"
           alt=""
         />
       </figure>
