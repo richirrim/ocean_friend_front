@@ -79,6 +79,7 @@ export default {
         console.log('data', response.data)
         this.seaAnimals = response.data
       })
+      /* eslint-disable */
       .catch((error) => {
         this.errored = true
       })
@@ -87,7 +88,7 @@ export default {
 }
 </script>
 
-<style scopde lang="scss">
+<style scoped lang="scss">
 .main-header {
   & > .wrapper {
     position: relative;
